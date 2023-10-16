@@ -6,9 +6,8 @@ const redis = require('../utils/redis');
 router.post('/', async (req, res) => {
   const jobData = req.body;
 
-  const jobId = Math.random().toString(36).substr(2, 9); // Generate a random job ID
+  const jobId = Math.random().toString(36).substr(2, 9); 
 
-  // Enqueue the job, store jobData as a JSON string
   const jobInfo = { id: jobId, data: JSON.stringify(jobData) };
   await redis.lpush('jobQueue', JSON.stringify(jobInfo));
 

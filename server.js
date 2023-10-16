@@ -6,7 +6,6 @@ app.use(express.json());
 
 const job= require('./routes/job');
 const {processJobs} = require('./worker/jobWorker');
-// Start the job processing worker
 processJobs();
 
 app.use('/jobs', job);
