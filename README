@@ -1,0 +1,14 @@
+# Job Queue System with Redis and Node.js
+Create a Job
+Endpoint: POST /jobs
+
+Description: Create a job with specific data and enqueue it in the Redis job queue.
+curl -X POST -H "Content-Type: application/json" -d '{"data": "your-job-data"}' http://localhost:3000/jobs
+
+Response: A JSON response with a message and the job ID.
+
+Check Job Status and Result
+Endpoint: GET /jobs/:id
+curl http://localhost:3000/jobs/:id
+
+Description: Check the status and result of a specific job by its ID.
